@@ -1,8 +1,8 @@
 body {
    margin-top: 80px;
-   font-size: 16px;
 }
 .calendar {
+   font-size: 16px;
    margin: 0 auto;
    border: 3px double black;
    border-spacing: 0px;
@@ -45,6 +45,7 @@ tr.month td {
 }
 td {
    padding: 0;
+   line-height: 20px;
    height: 22px;
    width: 32px;
    position: relative;
@@ -90,14 +91,111 @@ span.legend span {
    position: absolute;
    left: 0;
 }
+
+.calendar.a4 {
+   font-size: 24px;
+}
+.calendar.a4 td {
+   line-height: 30px;
+   height: 33px;
+   width: 48px;
+}
+.calendar.a4 span.legend {
+   font-size: 18px;
+   line-height: 34px;
+   padding-left: 34px;
+}
+.calendar.a4 span.legend span {
+   font-size: 24px;
+}
+.calendar.a4 .moon {
+   height: 32px;
+   width: 32px;
+}
+.calendar.a4 .moon-new {
+   border-radius: 32px;
+}
+.calendar.a4 .moon-first {
+   width: 16px;
+   border-radius:  0 32px 32px 0;
+}
+.calendar.a4 .moon-full {
+   border-radius: 32px;
+}
+.calendar.a4 .moon-last {
+   width: 16px;
+   border-radius: 32px 0 0 32px;
+}
+
 @media print {
-   body {
+   @page {
+      margin: 6mm;
+   }
+   .calendar {
       font-size: 4mm;
    }
    td {
-      padding: 0;
+      line-height: 3.5mm;
       height: 4.8mm;
-      border: 1px dotted;
       width: 7.1mm;
+   }
+   span.legend {
+      font-size: 3mm;
+      line-height: 4.1mm;
+   }
+   span.legend span {
+      font-size: 4mm;
+   }
+   .moon {
+      height: 4mm;
+      width: 4mm;
+   }
+   .moon-new {
+      border-radius: 4mm;
+   }
+   .moon-first {
+      width: 2mm;
+      border-radius:  0 4mm 4mm 0;
+   }
+   .moon-full {
+      border-radius: 4mm;
+   }
+   .moon-last {
+      width: 2mm;
+      border-radius: 4mm 0 0 4mm;
+   }
+
+   .calendar.a4 {
+      font-size: 5.6mm;
+   }
+   .calendar.a4 td {
+      line-height: 4.9mm;
+      height: 6.7mm;
+      width: 9.9mm;
+   }
+   .calendar.a4 span.legend {
+      font-size: 3mm;
+      line-height: 6mm;
+   }
+   .calendar.a4 span.legend span {
+      font-size: 5.6mm;
+   }
+   .calendar.a4 .moon {
+      height: 5.6mm;
+      width: 5.6mm;
+   }
+   .calendar.a4 .moon-new {
+      border-radius: 5.6mm;
+   }
+   .calendar.a4 .moon-first {
+      width: 2.3mm;
+      border-radius:  0 5.6mm 5.6mm 0;
+   }
+   .calendar.a4 .moon-full {
+      border-radius: 5.6mm;
+   }
+   .calendar.a4 .moon-last {
+      width: 2.3mm;
+      border-radius: 5.6mm 0 0 5.6mm;
    }
 }
