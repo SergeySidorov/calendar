@@ -1,0 +1,114 @@
+body {
+   margin-top: 80px;
+   font-size: 17px;
+}
+table.calendar {
+   margin: 0 auto;
+   border: 3px double black;
+   border-spacing: 0px;
+   border-collapse: separate;
+   font-family: monospace;
+}
+.year-title {
+   text-align: center;
+}
+.year-footer {
+   border-top-style: solid;
+   border-width: 1px;
+   text-align: center;
+}
+.weekday-title {
+   text-align: center;
+}
+.holiday {
+   font-weight: bold;
+}
+.shortday {
+   text-decoration: underline;
+}
+.month-title {
+   border-left-style: solid;
+   border-width: 1px;
+   text-align: center;
+   font-style: italic;
+}
+.c1 {
+   border-left-style: solid;
+   border-width: 1px;
+}
+td {
+   padding: 0;
+   height: 24px;
+   width: 32px;
+   position: relative;
+}
+.moon {
+   position: absolute;
+   height: 18px;
+}
+.moon-new {
+   height: 21px;
+   width: 21px;
+   border: 3px double #058305;
+   border-radius: 21px;
+   margin-left: 10px;
+   top: 0;
+   left: 0;
+}
+.moon-first {
+   width: 9px;
+   margin-top: 2px;
+   border: 1px solid #0402fc;
+   border-radius:  0 18px 18px 0;
+   margin-left: 7px;
+   top: 0;
+   left: 50%;
+}
+.moon-full {
+   width: 18px;
+   border: 1px solid #040283;
+   border-radius: 18px;
+   margin-top: 2px;
+   margin-left: 12px;
+   top: 0;
+   left: 0;
+}
+.moon-last {
+   width: 9px;
+   margin-top: 2px;
+   border: 1px solid #830204;
+   border-radius: 18px 0 0 18px;
+   margin-left: 10px;
+   top: 0;
+   left: 0;
+}
+tr.month td {
+   border-top-style: solid;
+   border-width: 1px;
+}
+.c1,.c2,.c3,.c4,.c5,.c6 {
+   text-align: right;
+}
+span.legend {
+   position: relative;
+   font-size: 12px;
+   line-height: 22px;
+   display: inline-block;
+   padding-left: 25px;
+}
+span.legend span {
+   font-size: 17px;
+   position: absolute;
+   left: 0;
+}
+@media print {
+   body {
+      font-size: 4mm;
+   }
+   td {
+      padding: 0;
+      height: 4.8mm;
+      border: 1px dotted;
+      width: 7.1mm;
+   }
+}

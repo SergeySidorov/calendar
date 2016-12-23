@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>TODO supply a title</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/site.css">
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#">Лунно-производственный календарь</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+               <form class="navbar-form navbar-right">
+                  <div class="btn-group" role="group" data-toggle="buttons">
+                     <label class="btn btn-sm btn-default">
+                        <input type="radio" name="year" id="year2016">2016
+                     </label>
+                     <label class="btn btn-sm btn-default active">
+                        <input type="radio" name="year" id="year2017" checked>2017
+                     </label>
+                     <label class="btn btn-sm btn-default">
+                        <input type="radio" name="year" id="year2018">2018
+                     </label>
+                  </div>
+                  <div class="btn-group" role="group" data-toggle="buttons">
+                     <label class="btn btn-sm btn-default active">
+                        Маленький (A5)
+                        <input type="radio" name="size" id="size_small" checked>
+                     </label>
+                     <label class="btn btn-sm btn-default">
+                        Большой (A4)
+                        <input type="radio" name="size" id="size_big">
+                     </label>
+                  </div>
+                  <button type="button" class="btn btn-primary"><i class="fa fa-print"></i> Печать</button>
+               </form>
+            </div>
+         </div>
+      </nav>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 main">
+               <table class="calendar">
+                  <tr><td colspan="37" class="year-title"></td></tr>
+                  <tr class="month">
+                     <td class="weekday-title"></td>
+                     <td class="month-title" colspan="6">Январь</td>
+                     <td class="month-title" colspan="6">Февраль</td>
+                     <td class="month-title" colspan="6">Март</td>
+                  </tr>
+                  <tr class="r1">
+                     <td class="weekday-title">Пн</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r2">
+                     <td class="weekday-title">Вт</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r3">
+                     <td class="weekday-title">Ср</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r4">
+                     <td class="weekday-title">Чт</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r5">
+                     <td class="weekday-title">Пт</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r6">
+                     <td class="weekday-title holiday">Сб</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="r7">
+                     <td class="weekday-title holiday">Вс</td>
+                     <td class="m1 c1"></td>
+                     <td class="m1 c2"></td>
+                     <td class="m1 c3"></td>
+                     <td class="m1 c4"></td>
+                     <td class="m1 c5"></td>
+                     <td class="m1 c6"></td>
+                     <td class="m2 c1"></td>
+                     <td class="m2 c2"></td>
+                     <td class="m2 c3"></td>
+                     <td class="m2 c4"></td>
+                     <td class="m2 c5"></td>
+                     <td class="m2 c6"></td>
+                     <td class="m3 c1"></td>
+                     <td class="m3 c2"></td>
+                     <td class="m3 c3"></td>
+                     <td class="m3 c4"></td>
+                     <td class="m3 c5"></td>
+                     <td class="m3 c6"></td>
+                  </tr>
+                  <tr class="month">
+                     <td class="weekday-title"></td>
+                     <td class="month-title" colspan="6">Апрель</td>
+                     <td class="month-title" colspan="6">Май</td>
+                     <td class="month-title" colspan="6">Июнь</td>
+                  </tr>
+                  <tr class="r1">
+                     <td class="weekday-title">Пн</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r2">
+                     <td class="weekday-title">Вт</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r3">
+                     <td class="weekday-title">Ср</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r4">
+                     <td class="weekday-title">Чт</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r5">
+                     <td class="weekday-title">Пт</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r6">
+                     <td class="weekday-title holiday">Сб</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="r7">
+                     <td class="weekday-title holiday">Вс</td>
+                     <td class="m4 c1"></td>
+                     <td class="m4 c2"></td>
+                     <td class="m4 c3"></td>
+                     <td class="m4 c4"></td>
+                     <td class="m4 c5"></td>
+                     <td class="m4 c6"></td>
+                     <td class="m5 c1"></td>
+                     <td class="m5 c2"></td>
+                     <td class="m5 c3"></td>
+                     <td class="m5 c4"></td>
+                     <td class="m5 c5"></td>
+                     <td class="m5 c6"></td>
+                     <td class="m6 c1"></td>
+                     <td class="m6 c2"></td>
+                     <td class="m6 c3"></td>
+                     <td class="m6 c4"></td>
+                     <td class="m6 c5"></td>
+                     <td class="m6 c6"></td>
+                  </tr>
+                  <tr class="month">
+                     <td class="weekday-title"></td>
+                     <td class="month-title" colspan="6">Июль</td>
+                     <td class="month-title" colspan="6">Август</td>
+                     <td class="month-title" colspan="6">Сентябрь</td>
+                  </tr>
+                  <tr class="r1">
+                     <td class="weekday-title">Пн</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r2">
+                     <td class="weekday-title">Вт</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r3">
+                     <td class="weekday-title">Ср</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r4">
+                     <td class="weekday-title">Чт</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r5">
+                     <td class="weekday-title">Пт</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r6">
+                     <td class="weekday-title holiday">Сб</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="r7">
+                     <td class="weekday-title holiday">Вс</td>
+                     <td class="m7 c1"></td>
+                     <td class="m7 c2"></td>
+                     <td class="m7 c3"></td>
+                     <td class="m7 c4"></td>
+                     <td class="m7 c5"></td>
+                     <td class="m7 c6"></td>
+                     <td class="m8 c1"></td>
+                     <td class="m8 c2"></td>
+                     <td class="m8 c3"></td>
+                     <td class="m8 c4"></td>
+                     <td class="m8 c5"></td>
+                     <td class="m8 c6"></td>
+                     <td class="m9 c1"></td>
+                     <td class="m9 c2"></td>
+                     <td class="m9 c3"></td>
+                     <td class="m9 c4"></td>
+                     <td class="m9 c5"></td>
+                     <td class="m9 c6"></td>
+                  </tr>
+                  <tr class="month">
+                     <td class="weekday-title"></td>
+                     <td class="month-title" colspan="6">Октябрь</td>
+                     <td class="month-title" colspan="6">Ноябрь</td>
+                     <td class="month-title" colspan="6">Декабрь</td>
+                  </tr>
+                  <tr class="r1">
+                     <td class="weekday-title">Пн</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r2">
+                     <td class="weekday-title">Вт</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r3">
+                     <td class="weekday-title">Ср</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r4">
+                     <td class="weekday-title">Чт</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r5">
+                     <td class="weekday-title">Пт</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r6">
+                     <td class="weekday-title holiday">Сб</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr class="r7">
+                     <td class="weekday-title holiday">Вс</td>
+                     <td class="m10 c1"></td>
+                     <td class="m10 c2"></td>
+                     <td class="m10 c3"></td>
+                     <td class="m10 c4"></td>
+                     <td class="m10 c5"></td>
+                     <td class="m10 c6"></td>
+                     <td class="m11 c1"></td>
+                     <td class="m11 c2"></td>
+                     <td class="m11 c3"></td>
+                     <td class="m11 c4"></td>
+                     <td class="m11 c5"></td>
+                     <td class="m11 c6"></td>
+                     <td class="m12 c1"></td>
+                     <td class="m12 c2"></td>
+                     <td class="m12 c3"></td>
+                     <td class="m12 c4"></td>
+                     <td class="m12 c5"></td>
+                     <td class="m12 c6"></td>
+                  </tr>
+                  <tr><td colspan="37" class="year-footer">
+                        <span class="legend">Новолуние<div class="moon moon-new"></div></span>
+                        <span class="legend">Полнолуние<div class="moon moon-full"></div></span>
+                        <span class="legend"><span class="holiday">99</span>Выходной</span>
+                        <span class="legend"><span class="shortday">99</span>Предпраздничный</span>
+                  </td></tr>
+               </table>
+            </div>
+         </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="js/suncalc.js"></script>
+      <script src="js/calendar.js"></script>
+   </body>
+</html>
