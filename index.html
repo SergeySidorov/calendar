@@ -670,12 +670,24 @@
                         <span class="legend">Полнолуние<div class="moon moon-full"></div></span>
                         <span class="legend"><span class="holiday">99</span>Выходной день</span>
                         <span class="legend"><span class="shortday">99</span>Короткий день</span>
-                  </td></tr>
+                     </td></tr>
                </table>
             </div>
          </div>
       </div>
-
+      <div id="noHolidaysModal" class="modal fade" role="dialog" tabindex="-1">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Ошибка!</h4>
+               </div>
+               <div class="modal-body">
+                  <p>Не удалось загрузить производственный календарь для указанного года.</p>
+               </div>
+            </div>
+         </div>
+      </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <script src="js/suncalc.js"></script>

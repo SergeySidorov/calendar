@@ -75,7 +75,7 @@ var calendar = {
             });
             dfd.resolve(result);
          }).error(function(xml) {
-            console.log('no holidays found for this year');
+            $("#noHolidaysModal").modal()
             dfd.resolve({});
          });
       }).promise();
