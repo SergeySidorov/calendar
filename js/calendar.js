@@ -3,18 +3,38 @@ var calendar = {
    init: function () {
       this.tbl= $('table.calendar');
       var d = new Date();
-      this.renderCalendar(d.getFullYear());
-      //this.renderCalendar(d.getMonth() > 6 ? d.getFullYear() + 1 : d.getFullYear());
+      var year = d.getMonth() > 8 ? d.getFullYear() + 1 : d.getFullYear()
+      this.initUI(year);
+      this.renderCalendar(year);
+   },
+   initUI: function(year) {
+      var self=this;
+      $('input[type=radio][name=size]').change(function () {
+         if ('a4'===this.value) {
+            $('table.calendar').addClass('a4');
+         }
+         else {
+            $('table.calendar').removeClass('a4');
+         }
+      });
+      for(var y=year-2;y<=year+1;y++) {
+         $('<label class="btn btn-sm btn-default'+(y==year?' active':'')+'"><input type="radio" name="year" value="'+y+'" '+(y==year?' checked':'')+'>'+y+'</label>').appendTo($('#year-list'));
+      }
+      $('input[type=radio][name=year]').change(function () {
+         self.renderCalendar(this.value);
+      });
+      $('#print').click(function () {
+         window.print();
+      });
    },
    renderCalendar: function(year) {
       var self=this;
-      $('.year-title',this.tbl).html(year+' год'); // заголовок
-
       $.when(this.loadHolidays(year))
       .then(function(holidays){
          for(var m = 1; m <= 12; m++) {
             self.renderMonth(year,m,holidays);
          }
+         $('.year-title',this.tbl).html(year+' год'); // заголовок
       });
    },
    renderMonth: function(year,month,holidays) {
@@ -34,6 +54,7 @@ var calendar = {
                cell.html('');
             }
             else {
+               cell.removeClass('holiday shortday');
                cell.html(date.getDate());
                if (this.isHoliday(date,holidays)) {
                   cell.addClass('holiday');
@@ -75,7 +96,10 @@ var calendar = {
             });
             dfd.resolve(result);
          }).error(function(xml) {
-            $("#noHolidaysModal").modal()
+            $('<div id="floating_alert" class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Не удалось загрузить производственный календарь для указанного года.&nbsp;&nbsp;</div>').appendTo('body');
+            setTimeout(function () {
+                $(".alert").alert('close');
+            }, 3000);
             dfd.resolve({});
          });
       }).promise();

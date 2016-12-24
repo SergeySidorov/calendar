@@ -126,12 +126,21 @@ span.legend span {
    width: 16px;
    border-radius: 32px 0 0 32px;
 }
-
+#floating_alert {
+   position: absolute;
+   top: 20px;
+   left: 0;
+   right: 0;
+   width: 400px;
+   margin: 0 auto;
+   z-index: 5000;
+}
 @media print {
    @page {
+      size: A4;
       margin: 6mm;
    }
-   .calendar {
+  .calendar {
       font-size: 4mm;
    }
    td {
