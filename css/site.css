@@ -140,7 +140,10 @@ span.legend span {
       size: A4;
       margin: 6mm;
    }
-  .calendar {
+   .navbar {
+      display: none;
+   }
+   .calendar {
       font-size: 4mm;
    }
    td {
